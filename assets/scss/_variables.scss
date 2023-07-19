@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap');
+
+$font_montserrat : 'Montserrat', sans-serif;
+
+/*------------- color variables ------------*/
+$white: #ffffff;
+$header_bg :rgba(20, 20, 20, 0.102);
+$black_dark: #000000;
+$lightgray : #909090;
+$opacityblack_04 : rgba(0,0,0,0.4);
+$opacityblack_10 : rgba(0,0,0,0.10);
+$primary : #9C248F;
+$second: #00AF4D;
+$gray : #868686;
+$body_bg : #F2F2F2;
+$black2 : #414141;
+$tetst : #636363;
+$blue_b : #16B6F3;
+$grenn_b : #26BB5F;
+$bg_b  :#3E3A3B;
+$bg_pink :#EF1794;
+
+
+@mixin body_font{
+    font-size: 16px;
+    line-height: 22px;
+    @include mobile-view{
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+@mixin font_12{
+    font-size: 12px;
+    line-height: 16px;
+}
+@mixin font_14{
+    font-size: 14px;
+    line-height: 18px;
+}
+@mixin font_20{
+    font-size: 20px;
+    line-height: 30px;
+    @include mobile-view{
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+@mixin font_22{
+    font-size: 22px;
+    line-height: 30px;
+    @include mobile-view{
+        font-size: 20px;
+    }
+}
+@mixin font_18{
+    font-size: 18px;
+    line-height: 22px;
+}
+
+@mixin font_60{
+    font-size: 60px;
+    line-height: 85px;
+    @include ipad-view{
+        font-size: 50px;
+        line-height: 75px;
+    }
+    @include tab-view{
+        font-size: 40px;
+        line-height: 60px;
+    }
+    @include mobile-view{
+        font-size: 30px;
+        line-height: 45px;
+    }
+}
+@mixin font_50{
+    font-size: 50px;
+    line-height: 50px;
+    @include ipad-view{
+        font-size: 40px;
+        line-height: 50px;
+    }
+    @include tab-view{
+        font-size: 35px;
+        line-height: 40px;
+    }
+    @include mobile-view{
+        font-size: 30px;
+        line-height: 45px;
+    }
+}
+
+@mixin solid_btn{
+    background: $black_dark;
+    border: 2px solid $black_dark;
+    outline: none;
+    box-shadow: none;
+    padding: 19px 30px;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.3s all ease-in-out;
+    border-radius: 12px;
+    cursor: pointer;
+    &:hover{
+        background: transparent;
+        color: $black_dark;
+    }
+}
+@mixin solid_btn2{
+    background: $primary;
+    border: 2px solid $primary;
+    outline: none;
+    box-shadow: none;
+    padding: 19px 30px;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.3s all ease-in-out;
+    border-radius: 12px;
+    cursor: pointer;
+    &:hover{
+        background: transparent;
+        color: $primary;
+    }
+}
+@mixin border_btn{
+    background: transparent;
+    border: 1px solid $primary;
+    outline: none;
+    box-shadow: none;
+    padding: 19px 30px;
+    color: $primary;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: 0.3s all ease-in-out;
+    &:hover{
+        background: $primary;
+        color: $white;
+    }
+}
+
+// Resposnive media 
+$mini-screen: 1199px;
+$ipad-view: 991px;
+$tab-view: 767.90px;
+$mobile-view: 558px;
+$mobile-mini-view: 480px;
+
+@mixin mini-screen {
+    @media (max-width: #{$mini-screen}) {
+        @content;
+    }
+}
+@mixin ipad-view {
+    @media (max-width: #{$ipad-view}) {
+        @content;
+    }
+}
+@mixin tab-view {
+    @media (max-width: #{$tab-view}) {
+        @content;
+    }
+}
+@mixin mobile-view {
+    @media (max-width: #{$mobile-view}) {
+        @content;
+    }
+}
+@mixin mobile-mini-view {
+    @media (max-width: #{$mobile-mini-view}) {
+        @content;
+    }
+}

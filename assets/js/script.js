@@ -1,0 +1,96 @@
+function header_adj() {
+	if ($(window).width() < 992) {
+		var header_height = $(".header").outerHeight();
+		$(".nav-wrap .nav-list").css({ "padding-top": header_height + "px" });
+	} else {
+		$(".nav-wrap .nav-list").css({ "padding-top": "0" });
+	}
+}
+function submenu_toggle() {
+	if ($(window).width() < 992) {
+		$(".nav-list li.with-submenu")
+			.off()
+			.click(function () {
+				$(this).toggleClass("is-open");
+				$(".submenu").slideToggle("slow");
+			});
+	}
+}
+$(document).ready(function () {
+	header_adj();
+	submenu_toggle();
+	if ($(window).width() < 992) {
+		$(".hamburger")
+			.off()
+			.click(function () {
+				$(this).toggleClass("is-active");
+				$("body,html").toggleClass("sidebar-open");
+				$(".nav-wrap").toggleClass("is-open");
+			});
+
+		$(".overlay")
+			.off()
+			.click(function () {
+				$(".hamburger").removeClass("is-active");
+				$("body,html").removeClass("sidebar-open");
+				$(".nav-wrap").removeClass("is-open");
+			});
+	} else {
+		$(".hamburger").removeClass("is-active");
+		$("body,html").removeClass("sidebar-open");
+		$(".nav-wrap").removeClass("is-open");
+	}
+});
+$(window).on("resize", function () {
+	header_adj();
+	submenu_toggle();
+	if ($(window).width() < 992) {
+		$(".hamburger")
+			.off()
+			.click(function () {
+				$(this).toggleClass("is-active");
+				$("body,html").toggleClass("sidebar-open");
+				$(".nav-wrap").toggleClass("is-open");
+			});
+
+		$(".overlay")
+			.off()
+			.click(function () {
+				$(".hamburger").removeClass("is-active");
+				$("body,html").removeClass("sidebar-open");
+				$(".nav-wrap").removeClass("is-open");
+			});
+	} else {
+		$(".hamburger").removeClass("is-active");
+		$("body,html").removeClass("sidebar-open");
+		$(".nav-wrap").removeClass("is-open");
+	}
+});
+
+// banner slider js start
+$('.slider').slick({
+	dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 3,
+    centerMode: true,
+	adaptiveHeight:true,
+	autoplay: true,
+ 	 autoplaySpeed: 5000,
+		responsive: [                        
+		{
+		breakpoint: 1025,
+		settings: {
+			slidesToShow: 2,
+		}
+		},
+		{
+			breakpoint: 767,
+			settings: {
+				slidesToShow: 1,
+			}
+		}
+	]
+});
+
+// banner slider js end
